@@ -20,6 +20,6 @@ public class PaymentController {
 
     @PostMapping("/pay")
     public String processPayment(@RequestBody PaymentRequest request){
-        return paymentRegistry.getServiceBean(request.getPaymentMethod()).pay(request);
+        return paymentRegistry.getServiceBean(request.getPaymentMethod().toLowerCase()).pay(request);
     }
 }
